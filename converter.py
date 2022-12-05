@@ -95,7 +95,7 @@ class Converter:
 
         self.in_field.focus()
         
-   def LengthConverter(self):
+    def LengthConverter(self):
         
         self.factors = {'mi' : 1609.34, 'yd' : 0.9144, 'ft' : 0.3048, 'inch' : 0.0254, 'km' : 1000, 'm' : 1, 'cm' : 0.01, 'mm' : 0.001}
         self.ids = {"Miles" : 'mi', "Yards" : 'yd', "Feet" : 'ft', "Inches" : 'inch', "Kilometers" : 'km', "Meters" : 'm', "Centimeters" : 'cm', "Millileters" : 'mm'}
