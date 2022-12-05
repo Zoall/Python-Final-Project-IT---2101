@@ -166,7 +166,7 @@ class Converter:
 
         self.in_field.focus()
         
-   def TemperatureConverter(self):
+    def TemperatureConverter(self):
         def convert():
             celTemp = celTempVar.get()
             fahTemp = fahTempVar.get()
