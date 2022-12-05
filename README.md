@@ -1,4 +1,6 @@
 # Python-Final-Project-IT---2101
+* A final project for the course CS - 121 Advance Computer Programming.
+
 # All in One Application
 * A python application that contains 3 features.
 * A very useful and handy app for students that is created using Python as the programming language and Tkinter as its module for the GUI.
