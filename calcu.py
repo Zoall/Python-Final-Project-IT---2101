@@ -42,6 +42,26 @@ class Calculator:
         self.create_digit_buttons()
         self.create_operator_buttons()
         self.create_special_buttons()
+        
+    def create_special_buttons(self):
+        self.create_clear_button()
+        self.create_equals_button()
+        self.create_sqrt_button()
+        self.create_square_button()
+
+    def create_display_labels(self):
+        total_label = tk.Label(self.display_frame, text=self.total_expression, anchor=tk.E, bg=black, fg=white, padx=24,font=Small_Arial)
+        total_label.pack(expand=True, fill="both")
+
+        label = tk.Label(self.display_frame, text=self.current_expression, anchor=tk.E, bg=black, fg=white, padx=24,font=Large_Font)
+        label.pack(expand=True, fill="both")
+
+        return total_label, label     
+
+    def create_display_frame(self):
+        frame = tk.Frame(self.window, height=221, bg=glacier)
+        frame.pack(expand=True, fill="both")
+        return frame
 
     
 
