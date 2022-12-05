@@ -62,6 +62,43 @@ class Calculator:
         frame = tk.Frame(self.window, height=221, bg=glacier)
         frame.pack(expand=True, fill="both")
         return frame
+    
+    def add_to_expression(self, value):
+        self.current_expression += str(value)
+        self.update_label()    
+
+    def create_digit_buttons(self):
+        for digit, grid_value in self.digits.items():
+            button = tk.Button(self.buttons_frame, text=str(digit),bg=white,fg=black,font=Digit_Font,borderwidth=0, command=lambda x=digit: self.add_to_expression(x))
+            button.grid(row=grid_value[0], column=grid_value[1],sticky=tk.NSEW)
+
+    def append_operator(self, operator):
+        self.current_expression += operator
+        self.total_expression += self.current_expression
+        self.current_expression = ""
+        self.update_total_label()
+        self.update_label()        
+
+    def create_operator_buttons(self):
+        i = 0
+        for operator, symbol in self.operations.items():
+            button = tk.Button(self.buttons_frame, text=symbol, bg=offwhite, fg=black, font=Default_Font, borderwidth=0, command= lambda x=operator: self.append_operator(x))
+            button.grid(row=i, column=4, sticky=tk.NSEW)
+            i += 1
+
+    def clear(self):
+        self.current_expression = ""
+        self.total_expression = ""
+        self.update_label()
+        self.update_total_label()
+
+    def create_clear_button(self):
+        button = tk.Button(self.buttons_frame, text="C", bg=offwhite, fg=black, font=Default_Font,borderwidth=0, command=self.clear)
+        button.grid(row=0, column=1, sticky=tk.NSEW)
+
+    def sqrt(self):
+        self.current_expression = str(eval(f"{self.current_expression}**0.5"))
+        self.update_label()    
 
     
 
