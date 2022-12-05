@@ -165,6 +165,93 @@ class Converter:
         for child in self.len_frame.winfo_children(): child.grid_configure(padx=5, pady=5)
 
         self.in_field.focus()
+        
+   def TemperatureConverter(self):
+        def convert():
+            celTemp = celTempVar.get()
+            fahTemp = fahTempVar.get()
+            kelTemp = kelTempVar.get()
+
+            if celTempVar.get() != 0.0:
+                celToFah = (celTemp *  9/5 + 32)
+                celToKel = (celTemp - 273.15)
+                fahTempVar.set(celToFah)
+                kelTempVar.set(celToKel)
+
+            elif fahTempVar.get() != 0.0:
+                fahToCel = ((fahTemp - 32) * (5/9))
+                fahToKel = ((fahTemp - 32) * (5/9) + 273.15)
+                celTempVar.set(fahToCel)
+                kelTempVar.set(fahToKel)
+
+            elif kelTempVar.get() != 0.0:
+                kelToCel = (kelTemp + 273.15)
+                kelToFah = ((kelTemp - 273.15) * 9/5 + 32)
+                celTempVar.set(kelToCel)
+                fahTempVar.set(kelToFah)
+
+        def reset():
+            top = Toplevel(padx=50, pady=50)
+            top.grid()
+            message = Label(top, text = "Reset Complete")
+            button = Button(top, text="OK", command=top.destroy)
+
+            message.grid(row = 0, padx = 5, pady = 5)
+            button.grid(row = 1, ipadx = 10, ipady = 10, padx = 5, pady = 5)
+
+            fahTempVar.set(int(0))
+            celTempVar.set(int(0))
+            kelTempVar.set(int(0))
+
+        top = Toplevel()
+        top.title("TEMPERATURE CONVERTER")
+        top.geometry("375x667")
+        top.resizable(False, False)
+        top.configure(bg="black")
+
+        celTempVar = IntVar()
+        celTempVar.set(int(0))
+        fahTempVar = IntVar()
+        fahTempVar.set(int(0))
+        kelTempVar = IntVar()
+        kelTempVar.set(int(0))
+
+        titleLabel = Label (top, text = "TEMPERATURE CONVERSION", font = ("Nunito",18 ), justify = CENTER, bg = "black", fg = "white")
+        titleLabel.grid(column=1,row=1)
+        
+
+        celLabel = Label (top, text = "CELCIUS: ", font = ("Nunito", 16), bg="black", fg = "white")
+        celLabel.grid(row = 2, column = 1, pady = 10, sticky = NW)
+        
+        fahLabel = Label (top, text = "FAHRENHEIT: ", font = ("Nunito", 16), bg="black", fg = "white")
+        fahLabel.grid(row = 4, column = 1, pady = 10, sticky = NW)
+
+        kelLabel = Label (top, text = "KELVIN: ", font = ("Nunito", 16), bg="black", fg = "white")
+        kelLabel.grid(row = 6, column = 1, pady = 10, sticky = NW)
+
+        celEntry = Entry (top, font = ("Nunito", 15), width = 20, bd = 5, textvariable = celTempVar)
+        celEntry.grid(row = 3, column = 1, pady = 10, sticky = NW, padx = 50 )
+
+        fahEntry = Entry (top, font = ("Nunito", 15), width = 20, bd = 5, textvariable = fahTempVar)
+        fahEntry.grid(row = 5, column = 1, pady = 10, sticky = NW, padx = 50 )
+
+        kelEntry = Entry (top, font = ("Nunito", 15), width = 20, bd = 5, textvariable = kelTempVar)
+        kelEntry.grid(row = 7, column = 1, pady = 10, sticky = NW, padx = 50 )
+
+        celSym = Label(top, text ="°C", font = ("Nunito", 16), bg="black", fg="white")
+        celSym.grid(row = 3, column = 2, pady = 10, sticky = NW)
+
+        fahSym = Label(top, text ="°F", font = ("Nunito", 16), bg="black", fg="white")
+        fahSym.grid(row = 5, column = 2, pady = 10, sticky = NW)
+
+        kelSym = Label(top, text ="°K", font = ("Nunito", 16), bg="black", fg="white")
+        kelSym.grid(row = 7, column = 2, pady = 10, sticky = NW)
+
+        convertButton =Button (top, text = "CONVERT", font = ("Nunito", 8, "bold"), relief = RAISED, bd=5, justify = CENTER, overrelief = GROOVE, activebackground = "green", activeforeground="white", command = convert)
+        convertButton.grid(row = 8, column = 1, ipady = 8, ipadx = 12, pady = 5, sticky = NW, padx= 20)
+
+        resetButton = Button (top, text = "RESET", font = ("Nunito", 8, "bold"), relief = RAISED, bd=5, justify = CENTER,  overrelief = GROOVE, activebackground = "red", activeforeground="white", command = reset)
+        resetButton.grid(row = 9, column = 1,ipady = 8, ipadx = 12, pady = 5, sticky = NW, padx = 20)
 
 
     
