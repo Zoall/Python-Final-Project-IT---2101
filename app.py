@@ -1,9 +1,9 @@
 import tkinter as tk
 
 from tkinter import *
-from notepad import *
-from calcu import *
-from converter import *
+from utils.notepad import *
+from utils.calcu import *
+from utils.converter import *
 
 
 class App:
