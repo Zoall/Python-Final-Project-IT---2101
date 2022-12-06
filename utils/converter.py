@@ -174,7 +174,7 @@ class Converter:
 
             if celTempVar.get() != 0.0:
                 celToFah = (celTemp *  9/5 + 32)
-                celToKel = (celTemp - 273.15)
+                celToKel = (celTemp + 273.15)
                 fahTempVar.set(celToFah)
                 kelTempVar.set(celToKel)
 
@@ -185,7 +185,7 @@ class Converter:
                 kelTempVar.set(fahToKel)
 
             elif kelTempVar.get() != 0.0:
-                kelToCel = (kelTemp + 273.15)
+                kelToCel = (kelTemp - 273.15)
                 kelToFah = ((kelTemp - 273.15) * 9/5 + 32)
                 celTempVar.set(kelToCel)
                 fahTempVar.set(kelToFah)
