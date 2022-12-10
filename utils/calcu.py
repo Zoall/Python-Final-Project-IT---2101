@@ -15,7 +15,7 @@ offwhite = "#F8FAFF"
 
 class Calculator:
     def __init__(self):
-        self.window = tk.Toplevel()
+        self.window = tk.Tk()
         self.window.geometry("375x667")
         self.window.resizable(0,0)
         self.window.title("SIMPLE CALCULATOR")
@@ -48,6 +48,7 @@ class Calculator:
         self.create_equals_button()
         self.create_sqrt_button()
         self.create_square_button()
+        self.create_back_btn()
 
     def create_display_labels(self):
         total_label = tk.Label(self.display_frame, text=self.total_expression, anchor=tk.E, bg=black, fg=white, padx=24,font=Small_Arial)
@@ -63,6 +64,10 @@ class Calculator:
         frame.pack(expand=True, fill="both")
         return frame
     
+    def create_back_btn(self):
+        back = tk.Button(self.display_frame, text="Return To Menu", bg="gray" , fg="white",font = ("Nunito", 10, "bold"), relief = tk.RAISED, bd=5, anchor=tk.E, overrelief = tk.GROOVE, activebackground = "blue", activeforeground="white", command=self.back_btn)
+        back.pack()
+        
     def add_to_expression(self, value):
         self.current_expression += str(value)
         self.update_label()    
@@ -141,6 +146,11 @@ class Calculator:
 
     def update_label(self):
         self.label.config(text=self.current_expression[:11])
-
+    
+    def back_btn(self):
+            from app import App
+            self.window.destroy()
+            App()
+        
 
 
