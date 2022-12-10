@@ -3,7 +3,7 @@ from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 class Notepad:
     def __init__(self):
-        self.window = tk.Toplevel()
+        self.window = tk.Tk()
         self.window.title("Note Editor")
         self.window.rowconfigure(0, weight = 1)
         self.window.columnconfigure(1,  weight = 1)
@@ -23,9 +23,13 @@ class Notepad:
     def create_buttons(self):
         self.openfile_button = tk.Button(self.button_frame, text = "Open", command = self.open_file, bg="Black", fg="White")
         self.savefile_button = tk.Button(self.button_frame, text = "Save As", command = self.save_file, bg="Black", fg="White")
-
-        self.openfile_button.grid(row = 0, column = 0, sticky = "EW", padx = 5, pady = 5)
-        self.savefile_button.grid(row = 1, column = 0, sticky = "EW", padx = 5)
+        self.backbtn = tk.Button(self.button_frame, text="←", bg="gray" , fg="white",font = ("Nunito", 10, "bold"), relief = tk.RAISED, bd=5, justify = tk.CENTER, overrelief = tk.GROOVE, activebackground = "blue", activeforeground="white", command=self.back_btn)
+        
+        self.openfile_button.grid(row = 1, column = 0, sticky = "EW", padx = 5, pady = 5)
+        self.savefile_button.grid(row = 2, column = 0, sticky = "EW", padx = 5)
+        self.backbtn.grid(row = 0, column = 0, sticky = "EW", padx = 5, pady = 5)
+        
+        
 
     def open_file(self):
         
@@ -52,6 +56,11 @@ class Notepad:
             self.text = self.txt_editor.get("1.0", tk.END)
             output_file.write(self.text)
         self.window.title(f"My Note Editor - {self.filepath}")
+        
+    def back_btn(self):
+        from app import App
+        self.window.destroy()
+        App()
 
     
 
