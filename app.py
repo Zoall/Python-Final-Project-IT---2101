@@ -1,9 +1,9 @@
 import tkinter as tk
 
-from tkinter import *
-from utils.notepad import *
-from utils.calcu import *
-from utils.converter import *
+from tkinter import Tk, Button, RAISED, GROOVE, CENTER
+from utils.notepad import Notepad
+from utils.calcu import Calculator
+from utils.converter import Converter
 
 
 class App:
@@ -19,14 +19,27 @@ class App:
         self.create_main_ui_buttons()
 
     def create_main_ui_buttons(self):    
-        self.calcbtn = Button(self.window, text="CALCULATOR", bg="gray" , fg="white",font = ("Nunito", 20, "bold"), relief = RAISED, bd=5, justify = CENTER, overrelief = GROOVE, activebackground = "green", activeforeground="white", command=Calculator)
+        self.calcbtn = Button(self.window, text="CALCULATOR", bg="gray" , fg="white",font = ("Nunito", 20, "bold"), relief = RAISED, bd=5, justify = CENTER, overrelief = GROOVE, activebackground = "green", activeforeground="white", command=self.calcu_open)
         self.calcbtn.place(x=85,y=120)
-        self.convbtn = Button(self.window, text="CONVERTER", bg="gray" , fg="white",font = ("Nunito", 20, "bold"), relief = RAISED, bd=5, justify = CENTER, overrelief = GROOVE, activebackground = "green", activeforeground="white", command=Converter)
+        self.convbtn = Button(self.window, text="CONVERTER", bg="gray" , fg="white",font = ("Nunito", 20, "bold"), relief = RAISED, bd=5, justify = CENTER, overrelief = GROOVE, activebackground = "green", activeforeground="white", command=self.converter_open)
         self.convbtn.place(x=95,y=200)
-        self.notebtn = Button(self.window, text="NOTE PAD", bg="gray" , fg="white",font = ("Nunito", 20, "bold"), relief = RAISED, bd=5, justify = CENTER, overrelief = GROOVE, activebackground = "green", activeforeground="white", command=Notepad)
+        self.notebtn = Button(self.window, text="NOTE PAD", bg="gray" , fg="white",font = ("Nunito", 20, "bold"), relief = RAISED, bd=5, justify = CENTER, overrelief = GROOVE, activebackground = "green", activeforeground="white", command=self.notepad_open)
         self.notebtn.place(x=110,y=280)
         self.exitbtn = Button(self.window, text="EXIT", bg="gray", fg="white",font = ("Nunito", 20, "bold"), relief = RAISED, bd=5, justify = CENTER, overrelief = GROOVE, activebackground = "red", activeforeground="white", command=self.window.destroy)
         self.exitbtn.place(x=150,y=360)
+    
+    def calcu_open(self):
+        Calculator()
+        self.window.destroy()
+        
+    
+    def converter_open(self):
+        self.window.destroy()
+        Converter()
+    
+    def notepad_open(self):
+        self.window.destroy()
+        Notepad()
 
     
     def run(self):
