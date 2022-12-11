@@ -19,6 +19,13 @@
 # To run:
 * Open the app.py file to start the runtime of the program.
 
+# Self-Assessment
+| Tables        | Are           | Cool  |
+| :-----------: |:-------------:| :----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
 # Creators of this project:
 * Franz Marlo B. Andal
 * Emmanuel R. Recinto
