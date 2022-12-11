@@ -19,8 +19,7 @@
 * Open the app.py file to start the runtime of the program.
 
 # Video Presentation With Instructions:
-<a href="https://www.youtube.com/watch?v=L5Z0vDUtTqM" target="_blank"><p align = "center"><img src="https://github.com/Zoall/Python-Final-Project-IT---2101/blob/main/img/hqdefault.jpg" 
-                                                                                               alt="Presentation Vid" width="500" height="300" border="10" /></p></a>
+<p align = "center"><a href="https://www.youtube.com/watch?v=L5Z0vDUtTqM" target="_blank"><img src="https://github.com/Zoall/Python-Final-Project-IT---2101/blob/main/img/hqdefault.jpg"alt="Presentation Vid" width="500" height="300" border="10" /></p></a>
 
 # Self-Assessment
 | Metric        | Score           | Description |
