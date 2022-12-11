@@ -13,6 +13,9 @@
 
 * Module Used - Tkinter()-It is a standard Python interface to the Tk GUI toolkit shipped with Python. Python with tkinter outputs the fastest and easiest way to create the GUI applications. Creating a GUI using tkinter is an easy task.
 
+# UML - Unified Modeling Language
+![alt text]
+
 # To run:
 * Open the app.py file to start the runtime of the program.
 
