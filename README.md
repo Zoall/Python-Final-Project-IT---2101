@@ -20,11 +20,14 @@
 * Open the app.py file to start the runtime of the program.
 
 # Self-Assessment
-| Tables        | Are           | Cool  |
+| Metric        | Score           | Description |
 | :-----------: |:-------------:| :----:|
-| Code Reusablity     | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Code Reusablity | 3 | Implemented the DRY method in an acceptable manner. |
+| Maintainablity  | 4 | The program is implemented based on OOP Principles. Debugging is less challenging than usual programs. |
+| Scalability | 4 | Adding a new feature in the app or program is easier. |
+| Execution | 4 | Handling of errors are remarkly done by using try catch exception. |
+| Originality | 3 | Concept is quite similar to some samples since the topic or features used is common. |
+| Overall Impression | 4 | The program or app runs smoothly without noticeable bugs or errors. |
 
 # Creators of this project:
 * Franz Marlo B. Andal
